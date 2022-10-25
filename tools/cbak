@@ -1,4 +1,7 @@
 #!/bin/bash
 #
 DATE=`date +"%Y%m%d_%H%M%S"`
-cp $1{,:$DATE}
+mkdir -p /cbak$PWD
+#cp $1{,:$DATE}
+cp $1 /cbak${PWD}/$1:$DATE
+test -L cbak-files || ln -s /cbak${PWD}/ cbak-files
